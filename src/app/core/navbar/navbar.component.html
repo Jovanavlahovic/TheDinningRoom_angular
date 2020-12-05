@@ -1,0 +1,6 @@
+<h4 class="text-center">The Dinning Room</h4>
+<p class="pl-4 list-group-item-secondary">Restaurants</p>
+<ul class="list-group">
+  <li class="list-group-item" [routerLink]="['restaurants']"><a>All</a></li>
+  <li class="list-group-item" *ngFor="let c of cuisines" [routerLink]="['restaurants/', c]"><a>{{c}}</a></li>
+</ul>

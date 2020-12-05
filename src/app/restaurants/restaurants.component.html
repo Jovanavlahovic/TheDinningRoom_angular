@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="col-6">
+         <ngb-pagination [page]="parameters.page"
+  [pageSize]="parameters.pageSize"
+  [collectionSize]="restaurants?.count"
+  (pageChange)="changePage($event)"></ngb-pagination>
+    </div>
+    <div class="col-6">
+        <label for="price">Price range:</label>
+        <input type="number" name="priceFrom" id="priceFrom" [(ngModel)]="parameters.filter.priceFrom" (change)="getRestaurants()">
+        <input type="number" name="priceTo" id="priceTo" [(ngModel)]="parameters.filter.priceTo" (change)="getRestaurants()">
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <app-restaurant-list [restaurantList]="restaurants"></app-restaurant-list>
+    </div>
+</div>

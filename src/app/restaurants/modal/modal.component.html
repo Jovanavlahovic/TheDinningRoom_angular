@@ -1,0 +1,32 @@
+<table style="width: 100%">
+<h3>{{restaurant.name}}</h3>
+    <tr>
+        <td>
+            Working Hours:
+        </td>
+        <td> Address:</td>
+    </tr>
+    <tr>
+        <td>
+            <ul >
+            <ng-container *ngFor="let day of daysOfWeek; let i = index;">
+                <li *ngIf="restaurant.day[i]">{{day}}: {{restaurant.day[i].opens}}-{{restaurant.day[i].closes}}</li>
+            </ng-container>
+            </ul>
+        </td>
+        <td >
+        <p>{{restaurant.location}}</p>
+        </td>
+    </tr>
+</table>
+<table width="100%" class="table table-striped text-center">
+    <thead>
+        <th width="50%">Name</th>
+        <th width="50%">Price</th>
+    </thead>
+    <tbody *ngFor="let m of menu?.items">
+        <td >{{m.name}}</td>
+        <td>{{m.price}}</td>
+    </tbody>
+</table>
+
